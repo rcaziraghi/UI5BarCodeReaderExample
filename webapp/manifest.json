@@ -1,0 +1,96 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "barcodereader.barcodereader",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "ach": "ach"
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "sap-icon://task",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "flexEnabled": false,
+    "rootView": {
+      "viewName": "barcodereader.barcodereader.view.ViewBarCodeReader",
+      "type": "XML",
+      "async": true,
+      "id": "ViewBarCodeReader"
+    },
+    "dependencies": {
+			"minUI5Version": "1.95.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {},
+        "sap.f": {} 
+        }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "barcodereader.barcodereader.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "barcodereader.barcodereader.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteViewBarCodeReader",
+          "pattern": "RouteViewBarCodeReader",
+          "target": ["TargetViewBarCodeReader"]
+        }
+      ],
+      "targets": {
+        "TargetViewBarCodeReader": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ViewBarCodeReader",
+          "viewName": "ViewBarCodeReader"
+        }
+      }
+    }
+  }
+}

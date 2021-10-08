@@ -1,0 +1,40 @@
+{
+	"name": "barcodereader",
+	"version": "0.0.1",
+	"private": true,
+	"sapuxLayer": "CUSTOMER_BASE",
+	"description": "UI5BarCodeReader",
+	"keywords": [
+		"ui5",
+		"openui5",
+		"sapui5"
+	],
+	"main": "webapp/index.html",
+	"scripts": {
+		"start": "fiori run --open 'index.html'",
+		"start-local": "fiori run --config ./ui5-local.yaml --open 'test/flpSandbox.html'",
+		"start-noflp": "fiori run --open 'index.html'",
+		"build": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+		"lint": "eslint ./ --rulesdir ./node_modules/eslint-plugin-fiori-custom/lib/rules/",
+		"deploy": "fiori verify",
+		"deploy-config": "fiori add deploy-config",
+		"unit-tests": "fiori run --open test/unit/unitTests.qunit.html",
+		"int-tests": "fiori run --open test/integration/opaTests.qunit.html"
+	},
+	"devDependencies": {
+		"@ui5/cli": "^2.11.1",
+		"@ui5/fs": "^2.0.6",
+		"@ui5/logger": "^2.0.1",
+		"@sap/ux-ui5-tooling": "1",
+		"rimraf": "3.0.2",
+		"eslint": "7.32.0",
+		"eslint-plugin-fiori-custom": "2.2.1",
+		"@babel/eslint-parser": "7.14.7"
+	},
+	"ui5": {
+		"dependencies": [
+			"@sap/ux-ui5-tooling"
+		]
+	},
+	"dependencies": {}
+}

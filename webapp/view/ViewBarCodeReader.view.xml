@@ -1,0 +1,22 @@
+<mvc:View
+    controllerName="barcodereader.barcodereader.controller.ViewBarCodeReader"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:brc="barcodereader.barcodereader.libs.UI5BarCodeReader"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                    <brc:BarCodeReader id="barCodeReader"
+                        submit="onBarCodeSubmit"
+                        detect="onCameraDetection"
+                        closeOnDetect="true" />
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
