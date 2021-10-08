@@ -1,36 +1,65 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Fri Oct 08 2021 03:07:47 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori|
-|**App Generator Version**<br>1.3.6|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Floorplan Used**<br>simple|
-|**Service Type**<br>None|
-|**Service URL**<br>N/A
-|**Module Name**<br>barcodereader|
-|**Application Title**<br>UI5BarCodeReader|
-|**Namespace**<br>barcodereader|
-|**UI5 Theme**<br>sap_fiori_3|
-|**UI5 Version**<br>Latest|
-|**Enable Code Assist Libraries**<br>False|
-|**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/eslint-plugin-fiori-custom for the eslint rules.|
-|**Enable Telemetry**<br>False|
 
-## barcodereader
+# ui5BarCodeReader
 
-UI5BarCodeReader
+UI5BarCodeReader is a neat package powered by Quagga.js to add a input with barcode reading capabilities.
 
-### Starting the generated app
+UI5BarCodeReader é um pacote impulsionado por Quagga.js para adicionar um input com capacidade para leitura de código de barras.
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
+![](screenshot.gif)
 
+## Installation/Instalação
+
+Copy folder webapp/lib to /webapp folder in your project. Change also the bundleName of /webapp/lib/models.js to your project namespace.
+
+Copie a pasta /webapp/lib para a pasta /webapp do seu projeto. Altere também o bundleName do arquivo /webapp/lib/models.js para o namespace do seu projeto.
+
+## Usage/Uso
+
+Add namespace in view.xml
+
+Adicione o namespace à sua view.xml
+```xml
+<mvc:View
+	controllerName="barcodereader.barcodereader.controller.ViewBarCodeReader"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:brc="barcodereader.barcodereader.libs.UI5BarCodeReader"
+>
 ```
-    npm start
+Add control in view.xml
+Adicione o control ao view.xml
+```xml
+...
+<brc:BarCodeReader  id="barCodeReader"
+					submit="onBarCodeSubmit"
+					detect="onCameraDetection"
+					closeOnDetect="true"  />
 ```
+## Properties/Propriedades
 
-#### Pre-requisites:
+- **title**: Dialog title/Titulo da janela;
+- **closeText**: Close dialog text/Texto para ação de fechar a janela;
+- **closeIcon**: Close icon on dialog/Ícone de fechamento da janela;
+- **changeCameraText**: Camera switch button text/Texto do botão de trocar câmera;
+- **changeCameraIcon**: Camera switch button icon/Ícone do botão de trocar câmera;
+/* Input de Chave */
+- **inputPlaceholder**: Input placeholder text/Texto do "placeholder" no input;
+- **value**: Value/valor;
+- **openDialogText**: Dialog open button text/Texto do botão de abrir da janela;
+- **showDialogText**: Dialog show button text/Texto do botão de mostrar da janela;
+- **openDialogIcon**: Dialog open button icon/Ícone do botão de abrir da janela;
+- **openDialogWidth**:  Dialog open button width/Largura do botão de abrir da janela;
+- **closeOnDetect**: Close dialog on detect barcode/Fecha janela ao detectar código de barras;
+- **showInput**: Show input value/Mostrar input;
 
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+## Contributing/Contribuição
 
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+Please make sure to update tests as appropriate.
+
+Solicitações pull são bem-vindas. Para mudanças importantes, abra um problema (issue) primeiro para discutir o que você gostaria de mudar.  Certifique-se de atualizar os testes conforme apropriado.
+
+## License/Licença
+[MIT](https://choosealicense.com/licenses/mit/)
