@@ -44,7 +44,8 @@ sap.ui.define([
                 /* Fechar ao detectar */
                 closeOnDetect: { type: "boolean", defaultValue: false },
                 showInput: { type: "boolean", defaultValue: true },
-                readersDecoder: { type: "array", defaultValue: ["code_128_reader"] }
+                readersDecoder: { type: "array", defaultValue: ["code_128_reader"] },
+                locate: { type: "boolean", defaultValue: false }
 
             },
             aggregations: {
@@ -293,6 +294,7 @@ sap.ui.define([
                     },
                     numOfWorkers: 2,
                     frequency: 10,
+                    locate: this.getLocate(),
                     decoder: {
                         readers: this.getReadersDecoder()
                     }

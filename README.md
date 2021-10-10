@@ -66,6 +66,8 @@ Adicione o control ao view.xml
     Show input value/Mostrar input;
 - **readersDecoder**: { type: "array", defaultValue: ["code_128_reader"] }
     Array of types of barcodes which should be decoded during the session/Array de tipos de código de barras que devem ser decodificadas durante a sessão;
+- **locate**: { type: "boolean", defaultValue: false }
+    Find the barcode in the image/Localizar o código de barras na imagem
 
 ## Contributing/Contribuição
 
