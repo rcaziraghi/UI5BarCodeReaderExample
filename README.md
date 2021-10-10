@@ -38,20 +38,34 @@ Adicione o control ao view.xml
 ```
 ## Properties/Propriedades
 
-- **title**: Dialog title/Titulo da janela;
-- **closeText**: Close dialog text/Texto para ação de fechar a janela;
-- **closeIcon**: Close icon on dialog/Ícone de fechamento da janela;
-- **changeCameraText**: Camera switch button text/Texto do botão de trocar câmera;
-- **changeCameraIcon**: Camera switch button icon/Ícone do botão de trocar câmera;
-/* Input de Chave */
-- **inputPlaceholder**: Input placeholder text/Texto do "placeholder" no input;
-- **value**: Value/valor;
-- **openDialogText**: Dialog open button text/Texto do botão de abrir da janela;
-- **showDialogText**: Dialog show button text/Texto do botão de mostrar da janela;
-- **openDialogIcon**: Dialog open button icon/Ícone do botão de abrir da janela;
-- **openDialogWidth**:  Dialog open button width/Largura do botão de abrir da janela;
-- **closeOnDetect**: Close dialog on detect barcode/Fecha janela ao detectar código de barras;
-- **showInput**: Show input value/Mostrar input;
+- **title**: { type: "string", defaultValue: BARCODE_TITLE } (MessageBundle)
+    Dialog title/Titulo da janela;
+- **closeText**: { type: "string", defaultValue: DEFAULT_CLOSE } (MessageBundle)
+    Close dialog text/Texto para ação de fechar a janela;
+- **closeIcon**: { type: "sap.ui.core.URI", defaultValue: "" },
+    Close icon on dialog/Ícone de fechamento da janela;
+- **changeCameraText**: { type: "string", defaultValue: BARCODE_CHANGE_CAMERA } (MessageBundle)
+    Camera switch button text/Texto do botão de trocar câmera;
+- **changeCameraIcon**: { type: "sap.ui.core.URI", defaultValue: "sap-icon://camera" }
+    Camera switch button icon/Ícone do botão de trocar câmera;
+- **inputPlaceholder**: { type: "string", defaultValue: BARCODE_INPUT_PLACEHOLDER }
+    Input placeholder text/Texto do "placeholder" no input;
+- **value**: { type: "string", defaultValue: "" }
+    Value/valor;
+- **openDialogText**: { type: "string", defaultValue: BARCODE_OPEN_DIALOG_TEXT }
+    Dialog open button text/Texto do botão de abrir da janela;
+- **showDialogText**: { type: "boolean", defaultValue: false }
+    Dialog show button text/Texto do botão de mostrar da janela;
+- **openDialogIcon**: { type: "sap.ui.core.URI", defaultValue: "sap-icon://bar-code" }
+    Dialog open button icon/Ícone do botão de abrir da janela;
+- **openDialogWidth**:  { type: "sap.ui.core.CSSSize", defaultValue: "10rem" }
+    Dialog open button width/Largura do botão de abrir da janela;
+- **closeOnDetect**: { type: "boolean", defaultValue: false }
+    Close dialog on detect barcode/Fecha janela ao detectar código de barras;
+- **showInput**: { type: "boolean", defaultValue: true }
+    Show input value/Mostrar input;
+- **readersDecoder**: { type: "array", defaultValue: ["code_128_reader"] }
+    Array of types of barcodes which should be decoded during the session/Array de tipos de código de barras que devem ser decodificadas durante a sessão;
 
 ## Contributing/Contribuição
 
