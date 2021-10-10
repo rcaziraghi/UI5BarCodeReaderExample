@@ -1,0 +1,19 @@
+#reader {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+#reader video{
+    max-width: 100%;
+    width: 100%;
+}
+
+#reader canvas {
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
